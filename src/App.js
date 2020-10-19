@@ -6,9 +6,7 @@ function App() {
   return (
     <div>
       <Navbar dark color="primary">
-        <div className="container">
-          <NavbarBrand href=""> Link </NavbarBrand>
-        </div>
+        <NavbarBrand href=""> Link </NavbarBrand>
       </Navbar>
     </div>
   );
