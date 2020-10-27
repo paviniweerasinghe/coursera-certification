@@ -1,37 +1,20 @@
 import React, { Component } from "react";
-import {
-  Card,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardImgOverlay,
-  CardText,
-} from "reactstrap";
-import DishDetailedComponent from "./DishdetailComponent ";
+import { Card, CardImg, CardBody, CardTitle } from "reactstrap";
 
 export default class MenuComponent extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      selectedDish: null,
-    };
-    console.log("MenuComponent constructor is invoked");
   }
 
   componentDidMount() {
     console.log("MenuComponent componentDidMount is invoked");
   }
 
-  onDishSelect(dish) {
-    this.setState({ selectedDish: dish });
-  }
-
   render() {
     const menu = this.props.dishes.map((dish) => {
       return (
         <div key={dish.id} className="col-12 col-md-5 m-1">
-          <Card onClick={() => this.onDishSelect(dish)}>
+          <Card onClick={() => this.props.onClick(dish.id)}>
             <CardImg width="100%" src={dish.image} alt={dish.name}></CardImg>
             {/* <CardImgOverlay> */}
             <CardBody className="ml-5">
@@ -47,7 +30,6 @@ export default class MenuComponent extends Component {
     return (
       <div className="container">
         <div className="row">{menu}</div>
-        <DishDetailedComponent selectedDish={this.state.selectedDish} />
       </div>
     );
   }
