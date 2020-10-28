@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   Navbar,
   NavbarBrand,
@@ -43,25 +43,23 @@ export default class Header extends Component {
               <Nav brand>
                 <NavItem>
                   <NavLink className="nav-link" to="/home">
-                    <span className="fa fa-home fa-lg">Home</span>
+                    <span className="fa fa-home fa-lg"> Home</span>
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/aboutus">
-                    <span className="fa fa-info fa-lg">About</span>
-                  </NavLink>
+                  <Link className="nav-link" to="/aboutus">
+                    <span className="fa fa-info fa-lg"> About</span>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/menu">
-                    <span className="fa fa-list fa-lg">Menu</span>
-                  </NavLink>
+                  <Link className="nav-link" to="/menu">
+                    <span className="fa fa-list fa-lg"> Menu</span>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/contactus">
-                    <span className="fa fa-address-card fa-lg">
-                      Contact Us Here
-                    </span>
-                  </NavLink>
+                  <Link className="nav-link" to="/contactus">
+                    <span className="fa fa-address-card fa-lg"> Contact</span>
+                  </Link>
                 </NavItem>
               </Nav>
             </Collapse>
